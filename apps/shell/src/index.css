@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+/* ---------- Scan remote app sources so shell CSS includes all classes ---------- */
+@source "../../home/src";
+@source "../../projects/src";
+@source "../../blog/src";
+
+/* ---------- Theme tokens (shared across micro frontends) ---------- */
+@theme {
+  --color-bg: oklch(0.99 0 0);
+  --color-fg: oklch(0.13 0.02 264);
+  --color-muted: oklch(0.55 0.01 264);
+  --color-card: oklch(0.97 0.005 264);
+  --color-border: oklch(0.92 0.005 264);
+  --color-accent: oklch(0.55 0.2 264);
+}
+
+/* ---------- Base styles ---------- */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-fg);
+}

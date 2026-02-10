@@ -1,0 +1,21 @@
+{
+  "name": "micro-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm build:remotes && concurrently \"pnpm preview:remotes\" \"pnpm dev:shell\"",
+    "dev:shell": "pnpm --filter shell dev",
+    "build:remotes": "pnpm --filter '!shell' build",
+    "preview:remotes": "pnpm --filter '!shell' --parallel preview",
+    "build": "pnpm -r build",
+    "preview": "pnpm -r --parallel preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.28.0",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
