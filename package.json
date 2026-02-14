@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm build:remotes && concurrently \"pnpm preview:remotes\" \"pnpm dev:shell\"",
+    "dev": "pnpm build:remotes && concurrently \"pnpm preview:remotes\" \"pnpm watch:remotes\" \"pnpm dev:shell\"",
     "dev:shell": "pnpm --filter shell dev",
     "build:remotes": "pnpm --filter '!shell' build",
+    "watch:remotes": "pnpm --filter '!shell' --parallel watch",
     "preview:remotes": "pnpm --filter '!shell' --parallel preview",
     "build": "pnpm -r build",
     "preview": "pnpm -r --parallel preview"

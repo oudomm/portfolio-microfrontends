@@ -1,33 +1,20 @@
 <script setup lang="ts">
 const projects = [
   {
-    name: "micro-portfolio",
+    name: "Endora",
     description:
-      "This site. Micro-frontend architecture with React, Vue, Svelte.",
-    tech: ["React", "Vue", "Svelte", "Vite"],
-    source: "https://github.com/oudom/micro-portfolio",
-    live: "https://oudom.dev",
+      "A Backend-as-a-Service platform for frontend developers.",
+    tech: ["Next.js", "Spring Boot", "MongoDB", "PostgreSQL"],
+    source: "https://github.com/oudomm/endora-frontend",
+    live: "https://www.endora.space",
   },
   {
-    name: "api-gateway",
-    description: "Lightweight API gateway built with Go and Redis.",
-    tech: ["Go", "Redis", "Docker"],
-    source: "https://github.com/oudom/api-gateway",
-    live: null,
-  },
-  {
-    name: "realtime-chat",
-    description: "WebSocket chat app with React and Node.js.",
-    tech: ["React", "Node.js", "WebSocket", "PostgreSQL"],
-    source: "https://github.com/oudom/realtime-chat",
-    live: "https://chat.oudom.dev",
-  },
-  {
-    name: "k8s-deployer",
-    description: "CLI tool for simplified Kubernetes deployments.",
-    tech: ["Go", "Kubernetes", "CLI"],
-    source: "https://github.com/oudom/k8s-deployer",
-    live: null,
+    name: "LineupLab",
+    description:
+      "A free tool to create football lineups with drag-and-drop positioning and image export.",
+    tech: ["Next.js", "TypeScript"],
+    source: "https://github.com/oudomm/LineupLab",
+    live: "https://lineup.oudom.dev",
   },
 ];
 </script>
