@@ -5,14 +5,26 @@
 @source "../../projects/src";
 @source "../../blog/src";
 
-/* ---------- Theme tokens (shared across micro frontends) ---------- */
+/* ---------- Theme tokens (light default) ---------- */
 @theme {
-  --color-bg: oklch(0.99 0 0);
+  --color-bg: oklch(0.98 0.005 264);
   --color-fg: oklch(0.13 0.02 264);
-  --color-muted: oklch(0.55 0.01 264);
-  --color-card: oklch(0.97 0.005 264);
-  --color-border: oklch(0.92 0.005 264);
-  --color-accent: oklch(0.55 0.2 264);
+  --color-muted: oklch(0.45 0.02 264);
+  --color-card: oklch(0.96 0.005 264);
+  --color-border: oklch(0.9 0.01 264);
+  --color-accent: oklch(0.55 0.2 270);
+  --color-accent-2: oklch(0.5 0.22 330);
+}
+
+/* ---------- Dark theme override ---------- */
+[data-theme="dark"] {
+  --color-bg: oklch(0.13 0.02 264);
+  --color-fg: oklch(0.93 0.01 264);
+  --color-muted: oklch(0.6 0.02 264);
+  --color-card: oklch(0.18 0.02 264);
+  --color-border: oklch(0.25 0.02 264);
+  --color-accent: oklch(0.7 0.18 270);
+  --color-accent-2: oklch(0.65 0.2 330);
 }
 
 /* ---------- Base styles ---------- */
@@ -25,4 +37,69 @@ body {
   font-family: "Inter", system-ui, sans-serif;
   background: var(--color-bg);
   color: var(--color-fg);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out both;
+}
+
+.animate-delay-100 { animation-delay: 0.1s; }
+.animate-delay-200 { animation-delay: 0.2s; }
+.animate-delay-300 { animation-delay: 0.3s; }
+.animate-delay-400 { animation-delay: 0.4s; }
+
+/* ---------- Gradient text utility ---------- */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---------- Glass card ---------- */
+.glass-card {
+  background: var(--color-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px oklch(0 0 0 / 0.08);
+}
+
+[data-theme="dark"] .glass-card {
+  background: oklch(0.18 0.02 264 / 0.6);
+  border-color: oklch(0.3 0.02 264 / 0.5);
+}
+
+[data-theme="dark"] .glass-card:hover {
+  background: oklch(0.2 0.02 264 / 0.7);
+  border-color: oklch(0.4 0.02 264 / 0.5);
+  box-shadow: 0 8px 30px oklch(0 0 0 / 0.3);
 }
