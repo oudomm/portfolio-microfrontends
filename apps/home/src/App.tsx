@@ -18,7 +18,7 @@ export default function App() {
               Hello, I'm
             </p>
             <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
-              Phoem<span className="text-gradient"> Oudom</span>
+              <span className="text-gradient"> Oudom</span> Phoem
             </h1>
             <p className="text-lg text-muted max-w-lg">
               Software engineering student focused on full-stack web development.
