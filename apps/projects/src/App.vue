@@ -1,10 +1,17 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from "vue";
+import endoraLight from "./endora-light.png";
+import endoraDark from "./endora-dark.png";
+import lineupLight from "./lineup-light.png";
+import lineupDark from "./lineup-dark.png";
+
 const projects = [
   {
     name: "Endora",
     description:
       "A BaaS platform with visual schema designer, AI web scraping, and auto-generated API docs.",
     tech: ["Next.js", "Spring Boot", "MongoDB", "PostgreSQL", "Keycloak", "Claude API", "Docker", "Google Cloud", "Nginx"],
+    image: { light: endoraLight, dark: endoraDark },
     source: "https://github.com/oudomm/endora-frontend",
     live: "https://www.endora.space",
   },
@@ -13,10 +20,24 @@ const projects = [
     description:
       "Create football lineups with drag-and-drop, player photos, bench management, and image export.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    image: { light: lineupLight, dark: lineupDark },
     source: "https://github.com/oudomm/LineupLab",
     live: "https://lineup.oudom.dev",
   },
 ];
+
+const theme = ref(document.documentElement.getAttribute("data-theme") ?? "light");
+
+let observer: MutationObserver;
+
+onMounted(() => {
+  observer = new MutationObserver(() => {
+    theme.value = document.documentElement.getAttribute("data-theme") ?? "light";
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+});
+
+onUnmounted(() => observer?.disconnect());
 </script>
 
 <template>
@@ -36,6 +57,11 @@ const projects = [
         :key="project.name"
         class="glass-card rounded-xl p-6 space-y-4"
       >
+        <img
+          :src="theme === 'dark' ? project.image.dark : project.image.light"
+          :alt="project.name + ' screenshot'"
+          class="rounded-lg border border-border/50 w-full"
+        />
         <h2 class="text-lg font-semibold">{{ project.name }}</h2>
         <p class="text-sm text-muted leading-relaxed">
           {{ project.description }}
