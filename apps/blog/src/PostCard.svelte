@@ -5,21 +5,26 @@
 </script>
 
 <div
-  class="glass-card rounded-xl p-6 space-y-3 cursor-pointer"
+  class="group border-t border-border py-6 cursor-pointer"
   {onclick}
   onkeydown={(e) => e.key === "Enter" && onclick()}
   role="button"
   tabindex="0"
 >
-  <div class="flex items-center gap-3">
-    <span
-      class="rounded-md border border-accent/30 bg-accent/10 px-2 py-0.5 font-mono text-xs text-accent"
-    >
-      {post.category}
+  <div class="flex items-start justify-between gap-6">
+    <div class="space-y-2">
+      <div class="flex items-center gap-2 font-mono text-xs text-muted">
+        <time>{post.date}</time>
+        <span>·</span>
+        <span>{post.category}</span>
+      </div>
+      <h2 class="text-lg font-semibold group-hover:text-accent transition-colors">
+        {post.title}
+      </h2>
+      <p class="text-sm text-muted leading-relaxed">{post.excerpt}</p>
+    </div>
+    <span class="mt-1 shrink-0 text-lg text-muted group-hover:text-accent transition-colors">
+      ↗
     </span>
-    <time class="text-xs text-muted">{post.date}</time>
   </div>
-  <h2 class="text-lg font-semibold">{post.title}</h2>
-  <p class="text-sm text-muted leading-relaxed">{post.excerpt}</p>
-  <span class="text-xs text-accent">Read more &rarr;</span>
 </div>

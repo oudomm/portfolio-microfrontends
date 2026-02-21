@@ -42,57 +42,41 @@ onUnmounted(() => observer?.disconnect());
 
 <template>
   <div class="space-y-8 animate-fade-in-up">
-    <div class="space-y-3">
-      <h1 class="text-3xl font-bold tracking-tight">
-        Projects
-      </h1>
-      <p class="text-muted">
-        A selection of things I've built and contributed to.
-      </p>
+    <div class="space-y-2">
+      <h1 class="text-3xl font-bold tracking-tight">Projects</h1>
+      <p class="text-muted">A selection of things I've built and contributed to.</p>
     </div>
 
     <div class="grid gap-4 md:grid-cols-2">
       <div
-        v-for="project in projects"
+        v-for="(project, i) in projects"
         :key="project.name"
-        class="glass-card rounded-xl p-6 space-y-4"
+        class="glass-card rounded-xl overflow-hidden"
       >
         <img
           :src="theme === 'dark' ? project.image.dark : project.image.light"
           :alt="project.name + ' screenshot'"
-          class="rounded-lg border border-border/50 w-full"
+          class="w-full aspect-video object-cover border-b border-border"
         />
-        <h2 class="text-lg font-semibold">{{ project.name }}</h2>
-        <p class="text-sm text-muted leading-relaxed">
-          {{ project.description }}
-        </p>
-
-        <div class="flex flex-wrap gap-1.5">
-          <span
-            v-for="tag in project.tech"
-            :key="tag"
-            class="rounded-md border border-border/50 bg-bg/50 px-2 py-0.5 font-mono text-xs text-fg/80"
-          >
-            {{ tag }}
-          </span>
-        </div>
-
-        <div class="flex gap-4 text-sm pt-1">
-          <a
-            :href="project.source"
-            target="_blank"
-            class="text-muted hover:text-accent transition-colors"
-          >
-            Source &rarr;
-          </a>
-          <a
-            v-if="project.live"
-            :href="project.live"
-            target="_blank"
-            class="text-muted hover:text-accent transition-colors"
-          >
-            Live &rarr;
-          </a>
+        <div class="p-6 space-y-4">
+          <div class="flex items-baseline gap-2">
+            <span class="font-mono text-xs text-muted">0{{ i + 1 }}</span>
+            <h2 class="text-lg font-semibold">{{ project.name }}</h2>
+          </div>
+          <p class="text-sm text-muted leading-relaxed">{{ project.description }}</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span
+              v-for="tag in project.tech"
+              :key="tag"
+              class="rounded-md border border-border/50 bg-bg/50 px-2 py-0.5 font-mono text-xs text-fg/80"
+            >
+              {{ tag }}
+            </span>
+          </div>
+          <div class="flex gap-4 text-sm pt-1">
+            <a :href="project.source" target="_blank" class="text-muted hover:text-accent transition-colors">Source ↗</a>
+            <a v-if="project.live" :href="project.live" target="_blank" class="text-muted hover:text-accent transition-colors">Live ↗</a>
+          </div>
         </div>
       </div>
     </div>

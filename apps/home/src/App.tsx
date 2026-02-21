@@ -14,24 +14,12 @@ export default function App() {
       <section className="flex flex-col-reverse items-start gap-8 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-6 animate-fade-in-up">
           <div className="space-y-3">
-            <p className="text-sm font-medium text-accent tracking-wide uppercase">
-              Hello, I'm
-            </p>
             <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
-              <span className="text-gradient"> Oudom</span> Phoem
+              Oudom
             </h1>
             <p className="text-lg text-muted max-w-lg">
-              Software engineering student focused on full-stack web development.
+              Building things with Spring Boot and Next.js. Based in Phnom Penh.
             </p>
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            <span className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs text-accent">
-              Student at ISTAD
-            </span>
-            <span className="rounded-full border border-border px-3 py-1 text-xs text-muted">
-              Phnom Penh, Cambodia
-            </span>
           </div>
 
           <div className="flex gap-4 text-sm">
@@ -75,21 +63,19 @@ export default function App() {
 
       {/* About */}
       <section className="space-y-4 animate-fade-in-up animate-delay-100">
-        <h2 className="text-sm font-medium uppercase tracking-widest text-gradient">
+        <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
           About
         </h2>
         <p className="max-w-2xl leading-relaxed text-muted">
-          I'm a software engineering student in the ITP Program at ISTAD,
-          currently studying Spring microservices. I enjoy building full-stack
-          applications — from crafting clean frontends with React and Next.js to
-          designing backend services with Spring Boot. I'm always looking to
-          learn and build things that solve real problems.
+          Full-stack developer who enjoys both sides of the stack — Spring Boot
+          microservices on the backend, microfrontend architectures with Next.js
+          multi-zones and Module Federation on the frontend.
         </p>
       </section>
 
       {/* Tech Stack */}
       <section className="space-y-6 animate-fade-in-up animate-delay-200">
-        <h2 className="text-sm font-medium uppercase tracking-widest text-gradient">
+        <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
           Stack
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">

@@ -64,18 +64,19 @@
   </div>
 {:else}
   <!-- Post list view -->
-  <div class="space-y-8 animate-fade-in-up">
-    <div class="space-y-3">
+  <div class="animate-fade-in-up">
+    <div class="space-y-2 pb-8">
       <h1 class="text-3xl font-bold tracking-tight">Blog</h1>
       <p class="text-muted">
         Writing about software, systems, and the things I learn along the way.
       </p>
     </div>
 
-    <div class="space-y-4">
+    <div>
       {#each posts as post, i}
         <PostCard {post} onclick={() => openPost(i)} />
       {/each}
+      <div class="border-t border-border"></div>
     </div>
   </div>
 {/if}

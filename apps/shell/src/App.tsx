@@ -100,7 +100,7 @@ export default function App() {
       {/* Footer */}
       <footer className="relative border-t border-border/50">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-8 text-xs text-muted">
-          <span>&copy; {new Date().getFullYear()} Oudom Phoem</span>
+          <span>&copy; {new Date().getFullYear()} Oudom</span>
           <div className="flex gap-4">
             <a href="https://github.com/oudomm" className="hover:text-accent transition-colors" target="_blank"
               rel="noopener noreferrer">GitHub</a>
