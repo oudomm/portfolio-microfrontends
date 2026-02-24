@@ -32,7 +32,7 @@ export default function App() {
               GitHub
             </a>
             <a
-              href="https://linkedin.com/in/oudomm"
+              href="https://linkedin.com/in/oudomdev"
               className="text-muted hover:text-accent transition-colors"
               target="_blank"
               rel="noopener noreferrer"

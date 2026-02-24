@@ -104,7 +104,7 @@ export default function App() {
           <div className="flex gap-4">
             <a href="https://github.com/oudomm" className="hover:text-accent transition-colors" target="_blank"
               rel="noopener noreferrer">GitHub</a>
-            <a href="https://linkedin.com/in/oudomm" className="hover:text-accent transition-colors" target="_blank"
+            <a href="https://linkedin.com/in/oudomdev" className="hover:text-accent transition-colors" target="_blank"
               rel="noopener noreferrer">LinkedIn</a>
             <a href="mailto:oudomphoem@gmail.com" className="hover:text-accent transition-colors" target="_blank"
               rel="noopener noreferrer">Email</a>
